@@ -442,7 +442,7 @@ These audit records must also identify individual identities of group account us
     <VMSinfo SVKey="86707" VKey="72083" VRelease="1"/>
     <title>The operating system must off-load audit records onto a different system or media from the system being audited.</title>
   </overlay>
-  <overlay disa="1851" owner="disastig" ownerid="RHEL-07-030310" ruleid="XXXX" severity="medium">
+  <overlay disa="1851" owner="disastig" ownerid="RHEL-07-030310" ruleid="auditd_audispd_encrypt_sent_records" severity="medium">
     <VMSinfo SVKey="86709" VKey="72085" VRelease="1"/>
     <title>The operating system must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited.</title>
   </overlay>

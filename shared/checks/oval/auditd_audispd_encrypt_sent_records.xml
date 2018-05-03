@@ -1,0 +1,29 @@
+<def-group>
+  <definition class="compliance" id="auditd_audispd_encrypt_sent_records" version="1">
+    <metadata>
+      <title>Encrypt Audit Records Sent With audispd Plugin</title>
+      <affected family="unix">
+        <platform>multi_platform_all</platform>
+      </affected>
+      <description>enable_krb5 setting in /etc/audisp/audisp-remote.conf is set to 'yes'</description>
+    </metadata>
+
+    <criteria>
+        <criterion comment="active setting in audisp-remote.conf" test_ref="test_auditd_audispd_encrypt_sent_records" />
+    </criteria>
+
+  </definition>
+
+  <ind:textfilecontent54_test check="all" comment="audispd krb5 enabled" id="test_auditd_audispd_encrypt_sent_records" version="1">
+    <ind:object object_ref="object_auditd_audispd_encrypt_sent_records" />
+  </ind:textfilecontent54_test>
+
+  <ind:textfilecontent54_object id="object_auditd_audispd_encrypt_sent_records" version="1">
+    <ind:filepath>/etc/audisp/audisp-remote.conf</ind:filepath>
+    <!-- Allow only space (exactly) as delimiter: https://fedorahosted.org/audit/browser/trunk/src/auditd-config.c#L426 -->
+    <!-- Require at least one space before and after the equal sign -->
+    <ind:pattern operation="pattern match">^[ ]*enable_krb5[ ]+=[ ]+yes[ ]*$</ind:pattern>
+    <ind:instance datatype="int">1</ind:instance>
+  </ind:textfilecontent54_object>
+
+</def-group>
