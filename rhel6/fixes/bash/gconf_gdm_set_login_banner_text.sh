@@ -9,7 +9,7 @@ fi
 
 # Expand the login_banner_text value - there was a regular-expression
 # matching various banners, needs to be expanded
-banner_expanded=$(echo "$login_banner_text" | sed 's/\[\\s\\n\][*+]/ /g;s/\\//g;')
+banner_expanded=$(echo "$login_banner_text" | sed 's/\[\\s\\n\][*+]/ /g;s/\[\\n\\n\][*+]/\n\n/g;s/\\//g;')
 
 # Set the text shown by the GNOME Display Manager in the login screen
 gconftool-2 --direct \
