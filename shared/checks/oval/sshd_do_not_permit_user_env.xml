@@ -1,5 +1,5 @@
 <def-group>
-  <definition class="compliance" id="sshd_do_not_permit_user_env" version="1">
+  <definition class="compliance" id="sshd_do_not_permit_user_env" version="2">
     <metadata>
       <title>Do Not Allow Users to Set Environment Options</title>
       <affected family="unix">
@@ -21,13 +21,13 @@
         <extend_definition comment="rpm package openssh-server installed"
         definition_ref="package_openssh-server_installed" />
         <criterion comment="Check PermitUserEnvironment in /etc/ssh/sshd_config"
-        negate="true" test_ref="test_sshd_no_user_envset" />
+        test_ref="test_sshd_no_user_envset" />
       </criteria>
     </criteria>
   </definition>
-  <ind:textfilecontent54_test check="all" check_existence="none_exist"
+  <ind:textfilecontent54_test check="all" check_existence="all_exist"
   comment="Check value of PermitUserEnvironment in /etc/ssh/sshd_config"
-  id="test_sshd_no_user_envset" version="1">
+  id="test_sshd_no_user_envset" version="2">
     <ind:object object_ref="obj_sshd_no_user_envset" />
   </ind:textfilecontent54_test>
   <ind:textfilecontent54_object id="obj_sshd_no_user_envset" version="2">
