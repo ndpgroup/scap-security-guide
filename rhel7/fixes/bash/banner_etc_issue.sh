@@ -10,5 +10,3 @@ formatted=$(echo "$expanded" | fold -sw 80)
 cat <<EOF >/etc/issue
 $formatted
 EOF
-
-printf "\n" >> /etc/issue
