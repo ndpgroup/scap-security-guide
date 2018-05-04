@@ -1,0 +1,14 @@
+documentation_complete: true
+
+title: 'SSH Approved Ciphers by FIPS'
+
+description: "Specify the FIPS approved Cipher (encryption) algorithms\n\tthat are used for data confidentiality protection by the SSH server."
+
+type: string
+
+operator: equals
+
+interactive: false
+
+options:
+    default: aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,aes192-cbc,aes256-cbc
